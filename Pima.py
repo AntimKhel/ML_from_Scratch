@@ -1,3 +1,4 @@
+#Python Code
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -136,10 +137,8 @@ new_models_dataframe2 = pd.DataFrame(abc,index=classifiers)
 new_models_dataframe2.columns = ['CV Mean']
 print(new_models_dataframe2)
 
-
 linear_svc=svm.SVC(kernel='linear',C=0.1,gamma=10,probability=True)
 lr=LogisticRegression(C=0.1)
-
 ensemble_lin_lr=VotingClassifier(estimators=[('Linear_svm', linear_svc), ('Logistic Regression', lr)],
                        voting='soft', weights=[3,2]).fit(train_X1,train_Y1)
 print('The accuracy for Linear SVM and Logistic Regression is:',ensemble_lin_lr.score(test_X1,test_Y1))
