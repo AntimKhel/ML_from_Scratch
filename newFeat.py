@@ -1,3 +1,4 @@
+#Bhanu
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -23,9 +24,10 @@ from sklearn.ensemble import VotingClassifier
 import warnings
 warnings.filterwarnings('ignore')
 
+# stratify the outcome
 outcome=diab['Outcome']
 data=diab[diab.columns[:10]]
-train,test=train_test_split(diab,test_size=0.25,random_state=0,stratify=diab['Outcome'])# stratify the outcome
+train,test=train_test_split(diab,test_size=0.25,random_state=0,stratify=diab['Outcome'])
 train_X=train[train.columns[:10]]
 test_X=test[test.columns[:10]]
 train_Y=train['Outcome']
